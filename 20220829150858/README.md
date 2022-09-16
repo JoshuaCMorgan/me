@@ -28,4 +28,6 @@ These attributes are part of a browser security feature known as **Subresource I
 - The `integrity` attribute allows browsers to verify that the resource being requested hasn't been manipulated in transit.
 - The `crossorigin` attribute enables the browser to accurately process the CORS request.
 
-- You should place the `<script>` tag for the library *before* any script tags where that library is used,
+- You should place the `<script>` tag for the library *before* any script tags where that library is used.
+
+#CDN #external_library
