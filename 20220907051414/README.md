@@ -15,4 +15,4 @@ const getValueOf = (selector) => form.querySelector(selector).value;
 // then use unary + operator in the return string to convert it to a number.
 let firstNumber = +getValueOf("#first-number");
 ```
-#unary-operator #coercion #numbers
+#unary-operator #coercion #numbers #convert 
