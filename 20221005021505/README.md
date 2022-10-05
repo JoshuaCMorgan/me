@@ -39,5 +39,15 @@ handleFormSubmit: function () {
     }
   },
 ```
-# check-validity #forms #form-error
+
+## satisfaction of constraints
+[validity states](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#validity-states)
+An element can be constrained in various ways. The following is the list of validity states that a form control can be in, making the control invalid for the purposes of constraint validation.
+- if an element doesn't satisfy of any validity state suffers
+- validity states (see link for me examples)
+  - value missing
+    - When a control has no value but has a `required` attribute
+  - pattern mismatch
+    - When a control has a value that doesn't satisfy the `pattern` attribute
+#check-validity #forms #form-error #pattern-attribute #required-attribute
 
