@@ -1,4 +1,4 @@
-# Swap the positions of the elements/nodes;
+# Swap the positions of the elements/nodes
  You may need to swap nodes at some point. 
 
 ```html
@@ -26,14 +26,18 @@
 ```javascript
 // Solution 1: Using clones, replaceChild and replaceWith
 function nodeSwap(id1, id2) {
+  function isInvalidSwap(node1, node2) {
+    return ((!node1 || !node2) ||
+        node1.contains(node2) || node2.contains(node1));
+  }
+
   // extract the relevant nodes
   const node1 = document.getElementById(id1);
   const node2 = document.getElementById(id2);
 
   // return if either node is not found in the DOM, or both nodes don't share the same parent
-  if (!node1 || !node2 || node1.parentNode !== node2.parentNode) return;
-
-  // both nodes(node1, node2) will have the same parent, pick either node to extract the parent node and store it 
+  if (!isInvalidSwap(node1, node2)) {
+    / both nodes(node1, node2) will have the same parent, pick either node to extract the parent node and store it 
   const parent = node1.parentNode;
 
   // deep cloning of both nodes to keep track of all of their child and grandchild nodes
@@ -49,27 +53,31 @@ function nodeSwap(id1, id2) {
   clone2.replaceWith(node2);
 
   return true;
+  }
 }
 
 
 // Solution 2: using replaceWith
 function nodeSwap(id1, id2) {
+  function isInvalidSwap(node1, node2) {
+    return ((!node1 || !node2) ||
+        node1.contains(node2) || node2.contains(node1));
+  }
   // extract the relevant nodes
   const node1 = document.getElementById(id1);
   const node2 = document.getElementById(id2);
 
   // return If either node is not found in the DOM, or both nodes don't share the same parent
-  if (!node1 || !node2 || node1.parentNode !== node2.parentNode) return;
+  if (!isInvalidSwap(node1, node2)) {
+    // Temp node to keep track of positions
+    const tempNode = document.createElement('div');
 
-  // Temp node to keep track of positions
-  const tempNode = document.createElement('div');
-
-  // `node1` still points to the original node extracted on line 2 of this function. However, on the DOM it got replaced with `tempNode`
-  node1.replaceWith(tempNode);
-  node2.replaceWith(node1);
-  tempNode.replaceWith(node2);
-
-  return true;
+    // `node1` still points to the original node extracted on line 2 of this function. However, on the DOM it got replaced with `tempNode`
+    node1.replaceWith(tempNode);
+    node2.replaceWith(node1);
+    tempNode.replaceWith(node2);
+    return true;
+  }
 }
  // at least one of the id attributes doesn't exist
   nodeSwap(1, 20);// undefined
