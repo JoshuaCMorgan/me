@@ -2,12 +2,15 @@
 
 There are several ways to do this with the DOM
 ## Using classes
-- use `DOMTokenList.replace()`
-- syntax: `replace(oldToken, newToken)`
-- use `DOMTokenList.toggle()`
-- syntax
-  - `toggle(token)`
-  - `toggle(token, force)`
+-  `DOMTokenList.replace()`
+  - syntax: `replace(oldToken, newToken)`
+
+- `DOMTokenList.add()` or `remove()`
+-  `DOMTokenList.toggle()`
+  - syntax
+    - `toggle(token)`
+    - `toggle(token, force)`
+
 
 
 ## Using toggle
@@ -15,7 +18,7 @@ There are several ways to do this with the DOM
  - in the code below,
    - if the `remaining` is less than zero, then it is true and `'invalid'` will be added to the class
    - if the `remaining` is greater than zer, it is false and `'invalid'` is removed from the class.
- -  
+ -  notice that we also disable the button element
 ```html
 <!-- add a character counter that updates as the user types. -->
 <!DOCTYPE html>
@@ -100,8 +103,8 @@ hideReplayLink: function() {
   replay.classList.replace('show', 'hide')
 }
 ```
-Or, you can use `DOMTokenList.add()` or `remove()`
-syntax: 
+## Use `add()`  and `remove()`
+
 ```javascript
 add(token0)
 add(token0, token1)
@@ -125,5 +128,5 @@ hideReplayLink: function() {
 },
 ```
 
-#toggle #classList #add #remove #display #hide #show #replace
+#toggle  #classList  #add  #remove #display  #hide  #show  #replace #disabled
 
