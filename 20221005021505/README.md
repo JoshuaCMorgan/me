@@ -4,12 +4,12 @@ Attributes for form submission can be specified both on form elements and on sub
 
 The attributes for form submission that may be specified on form elements are action, enctype, method, novalidate, and target.
 
-The corresponding attributes for form submission that may be specified on submit buttons are formaction, formenctype, formmethod, formnovalidate, and formtarget. 
+The corresponding attributes for form submission that may be specified on submit buttons are `formaction`, `formenctype`, `formmethod`, `formnovalidate`, and `formtarget`. 
 
-The novalidate and formnovalidate content attributes are boolean attributes. If present, they indicate that the form is not to be validated during submission.
+The `novalidate` and `formnovalidate` content attributes are boolean attributes. If present, they indicate that the form is not to be validated during submission.
 Example
 
-The no-validate state of an element is true if the element is a submit button and the element's formnovalidate attribute is present, or if the element's form owner's novalidate attribute is present, and false otherwise.
+The no-validate state of an element is true if the element is a submit button and the element's `formnovalidate` attribute is present, or if the element's form owner's novalidate attribute is present, and false otherwise.
 
 ```html
 <form action="#" method="post" novalidate>
