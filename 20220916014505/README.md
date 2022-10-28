@@ -11,7 +11,36 @@ There are several ways to do this with the DOM
     - `toggle(token)`
     - `toggle(token, force)`
 
-
+## Using data attribute
+Below, we set the 'button' data attribute and form id attribute to match.
+You'll notice that 'form' element has 'hidden' attribute.
+When a button is clicked, we access the the dataset value, retrieve
+the form element by using the id value and invoke 'hidden' global attribute.  
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the Document</title>
+  </head>
+  <body>
+    <button data-toggle-id="mail-id">
+      Show the form
+    </button>
+    <form id="mail-id" hidden>
+      Your mail:
+      <input type="email">
+    </form>
+    <script>
+      document.addEventListener('click', function(event) {
+        let id = event.target.dataset.toggleId;
+        if(!id) return;
+        let elem = document.getElementById(id);
+        elem.hidden = !elem.hidden;
+      });
+    </script>
+  </body>
+</html>
+```
 
 ## Using toggle
  - `force` is boolean.  if true, toggle will be added; if false, toggle will be removed.
