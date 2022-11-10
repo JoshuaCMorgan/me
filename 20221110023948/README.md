@@ -1,4 +1,4 @@
-# unbinding previous events
+# unbinding previous events/remove an event callback
 
 Sometimes, created events are based upon user input.  If that 
 user input changes, then we must unbind any previous events before
@@ -57,3 +57,4 @@ toggle
 </html>
 ```
 #unbind #toggle #toggle #trigger #keypress #value #form #off
+#remove-event-callback
