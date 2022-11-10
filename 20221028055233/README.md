@@ -26,4 +26,29 @@ animalClassifications.options.length = 0;
 console.log(animalClassifications)
 //  <select id="animal-classifications"> </select>
 ```
+
+Another option is to use `remove()`
+we have to select elements.  For each, we iterate through 
+the children and remove them.
+```javascript
+let [scheduleSelect, bookingSelect] = [document.querySelector('#schedule'), document.querySelector('#booking')];
+
+//clear and reset options for each form.
+[scheduleSelect, bookingSelect].forEach(deleteChildren);
+
+// this uses DOMTokenList.remove()
+function deleteChildren(parent) {
+  Array.from(parent.children).forEach(child => {
+    parent.remove(child)
+  });
+}
+
+// alternative uses Element.remove(), which removes element from DOM.
+function deleteChildren(parent) {
+  for (const child of parent.children) {
+    child.remove();
+  }
+}
+
+```
 #select #remove-options #clear-options #remove #clear
