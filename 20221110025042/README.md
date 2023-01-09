@@ -8,6 +8,11 @@ trigger()` function cannot be used to mimic native browser
 events, such as clicking on a file input box or an anchor tag.
 
 Instead of duplicating our `click` event, we can use `.trigger()` to invoke the event handler function for us.  
+In our callback, we could duplicate the `slideToggle` that happens in our `keypress` event,
+ but instead we should consider having the toggle only in one place. Then if something changes 
+ later on, like the ID we are using, we only have one place we need to make an update to. What 
+ we can do instead is to move the `slideToggle` from the `keypress` event to this one, then 
+ our `keypress` event can trigger the click event on this anchor. 
 ```html
 <!doctype html>
 <html lang="en-US">
