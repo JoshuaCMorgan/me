@@ -57,4 +57,4 @@ In our callback, we could duplicate the `slideToggle` that happens in our `keypr
   </script>
 </html>
 ```
-#trigger #trigger-different-event
+#trigger #trigger-different-event #jquery #form #keypress #accordion #slide
