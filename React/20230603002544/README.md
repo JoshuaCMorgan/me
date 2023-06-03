@@ -1,4 +1,4 @@
-# Create responsive CSS in React with `useRef`
+# Create responsive hide/show CSS in React with `useRef`
 
 The navigation bar is such that we have logo, hamburger menu and navigation links.
 
@@ -63,4 +63,4 @@ const Navbar = () => {
 export default Navbar;
 ```
 
-#navbar #React #toggleLinks #showLinks #hideLinks #useRef
+#navbar #React #toggleLinks #showLinks #hideLinks #useRef #getBoundingClientRect #linkStyles #linksRef #useRef
